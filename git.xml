@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Kate syntax highlight filter for Git commit logs. -->
+<!DOCTYPE language SYSTEM "language.dtd">
+<language name="Git" version="0.1" section="Other" extensions="COMMIT_EDITMSG" priority="15" author="Tijn Schuurmans (tijn.schuurmans@gmail.com)" license="LGPL" >
+  <highlighting>
+    <contexts>
+      <context name="Normal" attribute="Normal Text" lineEndContext="#stay">
+        <RegExpr attribute="Modified" String="^#\tmodified\:.*$"/>
+        <RegExpr attribute="Removed" String="^#\tdeleted\:.*$"/>
+        <RegExpr attribute="Added" String="^#\tnew\sfile\:.*$"/>
+        <RegExpr attribute="Comment" String="#.*$" context="#stay"/>
+      </context>
+      <context name="Comment" attribute="Comment" lineEndContext="#pop"/>
+<!--       <context name="Added" lineEndContext="#pop"/> -->
+    </contexts>
+    <itemDatas>
+      <itemData name="Normal Text" defStyleNum="dsNormal"/>
+      <itemData name="Comment" defStyleNum="dsComment"/>
+      <itemData name="Modified" defStyleNum="dsString" color="#0057AE"/>
+      <itemData name="Removed" defStyleNum="dsString" color="#BF0303"/>
+      <itemData name="Added" defStyleNum="dsOthers" color="#006E26"/>
+    </itemDatas>
+  </highlighting>
+  <general>
+    <comments>
+      <comment name="singleLine" start="#"/>
+    </comments>
+  </general>
+</language>
